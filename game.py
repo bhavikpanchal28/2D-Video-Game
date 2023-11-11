@@ -69,6 +69,16 @@ def draw (window, background, bg_image):
 
     pygame.display.update()
 
+def handle_move(player):
+    key = pygame.key.get_pressed()
+
+    player.x_vel = 0
+
+    if key[pygame.K_LEFT]:
+        player.move_left(PLAYER_VEL)
+    if key[pygame.K_RIGHT]:
+        player.move_right(PLAYER_VEL)
+
 
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
