@@ -49,6 +49,11 @@ class Player(pygame.sprite.Sprite):
     def draw(self, win):
         pygame.draw.rectangle(win, self.COLOR, self.rect)
 
+def get_background(name):
+    img = pygame.image.load(os.path.join("assets", "Background", name))
+    _, _, width, height = img.get_rect()
+    tiles = []
+
 
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
