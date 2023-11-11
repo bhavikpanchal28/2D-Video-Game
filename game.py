@@ -54,6 +54,13 @@ def get_background(name):
     _, _, width, height = img.get_rect()
     tiles = []
 
+    for i in range(WIDTH // width + 1):
+        for j in range(HEIGHT // height + 1):
+            pos = (i * width, j * height)
+            tiles.append(pos)
+
+    return tiles, image
+
 
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
