@@ -15,6 +15,11 @@ PLAYER_VEL = 5
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 
+# Add a player class
+
+
+
+
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
 
