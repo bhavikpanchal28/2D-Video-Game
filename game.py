@@ -67,6 +67,8 @@ def draw (window, background, bg_image):
 
     player.draw(window)
 
+    pygame.display.update()
+
 
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
