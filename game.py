@@ -46,6 +46,9 @@ class Player(pygame.sprite.Sprite):
     def loop(self, fps):
         self.move(self.x_vel, self.y_vel)
 
+    def draw(self, win):
+        pygame.draw.rectangle(win, self.COLOR, self.rect)
+
 
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
