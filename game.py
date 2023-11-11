@@ -82,6 +82,9 @@ def handle_move(player):
 
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
+    background, bg_image = get_background("Blue.png")
+
+    player = Player(100, 100, 64, 64)
 
     run = True
     while run:
