@@ -42,6 +42,9 @@ class Player(pygame.sprite.Sprite):
         if self.direction != "right":
             self.direction = "right"
             self.animation_count = 0
+            
+    def loop(self, fps):
+        self.move(self.x_vel, self.y_vel)
 
 
 def main(window):
