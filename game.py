@@ -92,6 +92,16 @@ def main(window):
         for event in pygame.event.get():                
             if event.type == pygame.QUIT:               
                 run = False
+                break
+
+        
+        player.loop(FPS)
+        handle_move(player)
+        draw(window, background, bg_image, player)
+    
+    pygame.quit()
+    quit()
+
 
 
 if __name__ == "__main__":                      # If the file is run directly
