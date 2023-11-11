@@ -61,6 +61,12 @@ def get_background(name):
 
     return tiles, image
 
+def draw (window, background, bg_image):
+    for tile in background:
+        window.blit(bg_image, tile)
+
+    player.draw(window)
+
 
 def main(window):
     clock = pygame.time.Clock()              # Creates a clock  
