@@ -26,8 +26,10 @@ class Player(pygame.sprite.Sprite):
         self.x_vel = 0
         self.y_vel = 0
         self.mask = None
-
-
+  
+    def move(self, dx, dy):
+        self.rect.x += dx
+        self.rect.y += dy
 
 
 def main(window):
