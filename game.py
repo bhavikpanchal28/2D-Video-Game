@@ -17,6 +17,9 @@ window = pygame.display.set_mode((WIDTH, HEIGHT))
 
 # Add a player class
 
+class Player(pygame.sprite.Sprite):
+    COLOR = (255, 0 , 0) 
+
 
 
 
