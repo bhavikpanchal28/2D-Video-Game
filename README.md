@@ -5,4 +5,5 @@ This project is made in python. \
 This project is still a work in progress. \
 The background for this project can be changed to match the user's preference. \
 A player dot point has been added for reference.\
-User can move the player dot left and right using the arrow keys.
+User can move the player dot left and right using the arrow keys.\
+Gravity has been added to the player dot.
