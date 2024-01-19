@@ -43,8 +43,6 @@ def load_sprite_sheets(dir1, dir2, width, height, direction=False):
     return all_sprites
 
 
-
-
 class Player(pygame.sprite.Sprite):
     COLOR = (255, 0, 0)
     GRAVITY = 1
@@ -86,11 +84,6 @@ class Player(pygame.sprite.Sprite):
     def draw(self, win):
         self.sprite = self.SPRITES["idle_" + self.direction][0]
         win.blit(self.sprite, (self.rect.x, self.rect.y))
-
-       
-
-
-
 
 
 def get_background(name):
