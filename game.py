@@ -8,6 +8,7 @@ pygame.init()
 
 pygame.display.set_caption("Adventurer")             # Sets the name of the window
 
+
 WIDTH, HEIGHT = 1000, 800
 FPS = 60                # Frames per second
 PLAYER_VEL = 5
@@ -41,7 +42,13 @@ def load_sprite_sheets(dir1, dir2, width, height, direction=False):
     
     return all_sprites
 
-
+def get_block(size):
+    path = join("assets", "Terrain", "Terrain.png")
+    image = pygame.image.load(path).convert_alpha()
+    surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
+    rect = pygame.Rect(96, 0, size, size)
+    surface.blit(image, (0, 0), rect)
+    return pygame.transform.scale2x(surface)
 
 
 class Player(pygame.sprite.Sprite):
@@ -51,6 +58,7 @@ class Player(pygame.sprite.Sprite):
     ANIMATION_DELAY = 2
 
     def __init__(self, x, y, width, height):
+        super().__init__()
         self.rect = pygame.Rect(x, y, width, height)
         self.x_vel = 0
         self.y_vel = 0
@@ -95,7 +103,7 @@ class Player(pygame.sprite.Sprite):
         self.animation_count += 1
         self.update()
 
-    def update():
+    def update(self):
         self.rect = self.sprite.get_rect(topleft=(self.rect.x, self.rect.y))
         self.mask = pygame.mask.from_surface(self.sprite)
 
@@ -105,10 +113,24 @@ class Player(pygame.sprite.Sprite):
         # self.sprite = self.SPRITES["idle_" + self.direction][0]
         win.blit(self.sprite, (self.rect.x, self.rect.y))
 
-       
+class Object(pygame.sprite.Sprite):
+    def __init__(self, x, y, width, height, name=None):
+        super().__init__()
+        self.rect = pygame.Rect(x, y, width, height)
+        self.image = pygame.Surface((width, height), pygame.SRCALPHA)
+        self.width = width
+        self.height = height
+        self.name = name
 
+    def draw(self, win):
+        win.blit(self.image, (self.rect.x, self.rect.y))
 
-
+class Block(Object):
+    def __init__(self, x, y, size):
+        super().__init__(x, y, size, size)
+        block = get_block(size)
+        self.image.blit(block, (0, 0))
+        self.mask = pygame.mask.from_surface(self.image)
 
 
 def get_background(name):
@@ -123,9 +145,12 @@ def get_background(name):
             
     return tiles, image
 
-def draw(window, background, bg_image, player):
+def draw(window, background, bg_image, player, objects):
     for tile in background:
         window.blit(bg_image, tile)
+    
+    for obj in objects:
+        obj.draw(window)
 
     player.draw(window)
 
@@ -147,10 +172,14 @@ def main(window):
     clock = pygame.time.Clock()
     background, bg_image = get_background("Blue.png")
 
-    player = Player(200, 400, 64, 64)
+    block_size = 96
 
+    player = Player(100, 100, 50, 50)
+    floor = [Block(i * block_size, HEIGHT - block_size, block_size)
+            for i in range(-WIDTH // block_size, WIDTH * 2// block_size)]
+    
     run = True
-
+ 
     while run:
         clock.tick(FPS)
 
@@ -161,7 +190,7 @@ def main(window):
 
         player.loop(FPS)
         handle_movement(player)
-        draw(window, background, bg_image, player)
+        draw(window, background, bg_image, player, floor)
 
 
     pygame.quit()
