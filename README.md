@@ -10,5 +10,5 @@ User can change the player model to any of the characters in the assets folder u
 Animation has been added to the player. \
 A floor of blocks has been added for the player to walk on.\
 Gravity has been added to the game. \
-The next addition to the game will be the ability to make the player jump
+The next addition to the game will be the ability to make the player jump.
 
