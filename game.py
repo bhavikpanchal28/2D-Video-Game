@@ -8,7 +8,6 @@ pygame.init()
 
 pygame.display.set_caption("Adventurer")             # Sets the name of the window
 
-
 WIDTH, HEIGHT = 1000, 800
 FPS = 60                # Frames per second
 PLAYER_VEL = 5
