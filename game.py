@@ -11,20 +11,20 @@ pygame.display.set_caption("Adventurer")             # Sets the name of the wind
 
 WIDTH, HEIGHT = 1000, 800
 FPS = 60                # Frames per second
-PLAYER_VEL = 5
+PLAYER_VEL = 5          # Player velocity
 
-window = pygame.display.set_mode((WIDTH, HEIGHT))
+window = pygame.display.set_mode((WIDTH, HEIGHT))                   # Creates the window
 
-def flip(sprites):
+def flip(sprites):                                                   # Flips the sprites
     return [pygame.transform.flip(sprite, True, False) for sprite in sprites]
 
-def load_sprite_sheets(dir1, dir2, width, height, direction=False):
-    path = join("assets", dir1, dir2)
+def load_sprite_sheets(dir1, dir2, width, height, direction=False):                 # Loads the sprite sheets
+    path = join("assets", dir1, dir2)                                   
     images = [f for f in listdir(path) if isfile(join(path, f))]
 
     all_sprites = {}
 
-    for image in images:
+    for image in images:                                                           # Loops through the images
         sprite_sheet = pygame.image.load(join(path, image)).convert_alpha()
 
         sprites = []
@@ -42,7 +42,7 @@ def load_sprite_sheets(dir1, dir2, width, height, direction=False):
     
     return all_sprites
 
-def get_block(size):
+def get_block(size):                                                      # Gets the block (obstacles and platform)
     path = join("assets", "Terrain", "Terrain.png")
     image = pygame.image.load(path).convert_alpha()
     surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
