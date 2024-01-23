@@ -13,5 +13,5 @@ Gravity has been added to the game. \
 The player is now able to jump with the press of the spacebar. The player can also double-jump. \
 Jumping animations have been added to the player. \
 A scrolling background has been added. \
-Next implementation will be pixel perfect horizontal collision
+Next implementation will be pixel perfect horizontal collision.
 
