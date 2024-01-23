@@ -10,5 +10,6 @@ User can change the player model to any of the characters in the assets folder u
 Animation has been added to the player. \
 A floor of blocks has been added for the player to walk on.\
 Gravity has been added to the game. \
-The player is now able to jump with the press of the spacebar. The player can also double-jump.
+The player is now able to jump with the press of the spacebar. The player can also double-jump. \
+Jumping animations have been added to the player.
 
