@@ -11,5 +11,6 @@ Animation has been added to the player. \
 A floor of blocks has been added for the player to walk on.\
 Gravity has been added to the game. \
 The player is now able to jump with the press of the spacebar. The player can also double-jump. \
-Jumping animations have been added to the player.
+Jumping animations have been added to the player. \
+The next implementation will be a scrolling background.
 
