@@ -14,4 +14,4 @@ The player is now able to jump with the press of the spacebar. The player can al
 Jumping animations have been added to the player. \
 A scrolling background has been added. \
 Pixel perfect horizontal collision has been implemented. As well as a few blocks in place as obstacles. \
-
+Next implementation will be fire traps.
