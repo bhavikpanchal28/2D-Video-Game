@@ -15,4 +15,4 @@ Jumping animations have been added to the player. \
 A scrolling background has been added. \
 Pixel perfect horizontal collision has been implemented. As well as a few blocks in place as obstacles. \
 Fire traps have been added. With animation. \
-Next implementation will be player collision with the traps.
+When the player hits the fire, there is an animation that shows the player has been damaged.
